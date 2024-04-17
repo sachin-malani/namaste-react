@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 50px;
+  background-color: cornsilk;
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  margin: 0.5rem;
+  border-radius: 50%;
+  border-color: black;
+  height: 30px;
+  width: 30px;
+}
+
+.searchBox {
+    height: 1rem;
+    width: 35rem;
+    margin: 0.5rem;
+    border-radius: 25 25 25 25;
+}
+
+input::placeholder {
+    text-align: center;
+}
