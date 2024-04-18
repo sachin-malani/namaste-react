@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 24px;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.restaurant-card {
+  width: 330px;
+  height: 322px;
+  padding: 5px;
+}
+
+.restaurant-card:hover {
+    cursor: pointer;
+  border: 1px solid black;
+}
+
+.restaurant-logo {
+  width: 100%;
+  height: 182px;
+  border-style: none;
+  border-radius: 8px;
+}
+
+.restaurant-name {
+    font-weight: 800;
+}
+
+.rating-eta {
+    display: flex;
+    gap: 1rem;
+    font-weight: 600;
+}
+
+.cuisine{
+    opacity: 0.7;
+}
+
+.restaurant-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.rating{
+  display: flex;
+}
