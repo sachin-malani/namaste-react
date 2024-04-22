@@ -1,0 +1,33 @@
+{
+  "name": "routing",
+  "version": "1.0.0",
+  "description": "Routes",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachin-malani/namaste-react.git"
+  },
+  "keywords": [
+    "react",
+    "routes"
+  ],
+  "author": "Sachin Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachin-malani/namaste-react/issues"
+  },
+  "homepage": "https://github.com/sachin-malani/namaste-react#readme",
+  "dependencies": {
+    "parcel": "^2.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
