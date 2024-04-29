@@ -2,30 +2,23 @@ import { RestaurantCard } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
   //State Variable
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { listOfRestaurants, filteredRestaurant, updateData } =
+    useRestaurantList();
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9520803&lng=77.5707288&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  const status = useOnlineStatus();
+  if (status === false)
+    return (
+      <h1>
+        Look's like you're offline!! Please check your internet connection
+      </h1>
     );
-    const json = await data.json();
-    //Optional Chaining
-    setListOfRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
 
   //Conditional Rendering
   return listOfRestaurants.length === 0 ? (
@@ -48,7 +41,7 @@ const Body = () => {
               const filteredList = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              setFilteredRestaurant(filteredList);
+              updateData(filteredList);
             }}
           >
             <img
@@ -65,7 +58,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.5
             );
-            setFilteredRestaurant(filteredList);
+            updateData(filteredList);
           }}
         >
           Top Rated
