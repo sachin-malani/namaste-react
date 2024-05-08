@@ -12,3 +12,11 @@
 - Code Splitting
 - Differential Bundling: Support older browsers
 - Tree Shaking: Remove unused code
+
+#Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect the store to our application
+- Create cartSlice
+- dispatch(action)
+- Selector
