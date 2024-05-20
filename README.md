@@ -20,3 +20,14 @@
 - Create cartSlice
 - dispatch(action)
 - Selector
+
+#Testing
+- Install React testing library & Jest
+- Install babel dependencies
+- Configure babel
+- Configure Parcel config file to disable default babel transpilaion
+- npx jest --init
+- Install jsdom library
+- Install @babel/preset-react to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+- Install @testing-library/jest-dom
