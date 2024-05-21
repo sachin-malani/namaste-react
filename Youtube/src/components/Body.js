@@ -4,7 +4,7 @@ import Main from "./Main";
 
 const Body = () => {
   return (
-    <div className="flex gap-4">
+    <div className="flex">
       <Sidebar />
       <Main />
     </div>
